@@ -1,0 +1,56 @@
+{
+  "list|1-20": [{
+    "announcer": "@cname",
+    "commentCount": "@natural(1, 1000000)",
+    "desc": "@cparagraph",
+    "description": function() {
+      if (this.desc.length < 100) {
+        return "#话题1#" + this.desc.substring(0, 20) + "#话题2#" + this.desc.substring(20) + "#话题3#";
+      } else {
+        return "#话题1#" + this.desc.substring(0, 20) + "#话题2#" + this.desc.substring(20, 80) + "<url="//www.baidu.com">链接</url>" + this.desc.substring(80) + "#话题3#";
+      }
+    },
+    "contentId": "@natural(10000, 100000)",
+    "contentSource": "@pick([16, 17, 18, 1])",
+    "contentType": "@pick([0, 1, 2, 4, 8, 9])",
+    "createTime": "@datetime(yyyy-MM-dd)",
+    "entityCover": "@image(200x200, #F60, #FFF)",
+    "entityFlag": "@pick([0, 1, 2, 3])",
+    "entityId": "@natural(1000, 1000000)",
+    "entityName": "@csentence",
+    "entityType": "@pick([1, 2, 4])",
+    "flag": 0,
+    "groupId": "@natural(1, 100)",
+    "groupName": "@csentence",
+    "images|1-9": ["@image(228x228, #4A7BF7, #FFF)"],
+    "likeCount": "@natural(1, 1000000)",
+    "playCount": "@natural(1, 100000)",
+    "playTime": "@time()",
+    "playUrl": "@url()",
+    "referId": "@pick([0, 1])",
+    "resourceId": "@natural(1000, 100000)",
+    "resourceType": "@pick([2, 4, 10])",
+    "sections": "@natural(1, 100)",
+    "source": "@pick([1, 2])",
+    "title": "@ctitle(5, 10)",
+    "topicPic": "@image(400x400, #4A7BF7, #FFF)",
+    "userCover": "@image(180x180, #894FC4, #FFF)",
+    "userId": "@natural(10000, 1000000)",
+    "userNick": "@cword(3, 10)",
+    "userRole": "@pick([0, 1, 2])",
+    "userState": 0,
+    "isVip": "@boolean",
+    "themes": [{
+      "name": "话题1",
+      "id": "@natural(1, 1000000)"
+    }, {
+      "name": "话题2",
+      "id": "@natural(1, 1000000)"
+    }, {
+      "name": "话题3",
+      "id": "@natural(1, 1000000)"
+    }]
+  }],
+  "status": 0,
+  "msg": "success"
+}

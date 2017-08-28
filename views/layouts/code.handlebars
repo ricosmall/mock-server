@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>mock数据</title>
+    <link rel="icon" href="/favicon.ico">
+    <link href="/stylesheets/zenburn.min.css" rel="stylesheet">
+    <script src="/javascripts/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 960px;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        pre {
+            height: 100%;
+            overflow: auto;
+            background-color: #3f3f3f;
+        }
+
+        code {
+            font-family: Menlo;
+        }
+
+        code::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+        <code class="json">{{{ body }}}</code>
+    </pre>
+</body>
