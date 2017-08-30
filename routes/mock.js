@@ -3,11 +3,11 @@ var router = express.Router();
 var Mock = require('mockjs');
 var fs = require('fs');
 
-router.get('/*', function (req, res, next) {
+var handleRequest = function (req, res, next) {
     var url = req.url.split('?')[0]
     console.log(url)
-    fs.readFile(`./api${url}.json`, 'utf-8', function(err, data) {
-        if(err) {
+    fs.readFile(`./api${url}.json`, 'utf-8', function (err, data) {
+        if (err) {
             console.log(err);
             res.json({
                 status: 1,
@@ -40,5 +40,7 @@ router.get('/*', function (req, res, next) {
             res.json(data);
         }
     })
-})
+}
+
+router.get('/*', handleRequest).post('/*', handleRequest)
 module.exports = router

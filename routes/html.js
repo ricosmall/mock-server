@@ -3,8 +3,7 @@ var router = express.Router();
 var Mock = require('mockjs');
 var fs = require('fs');
 
-/* GET code page. */
-router.get('/*', function (req, res, next) {
+var handleRequest = function (req, res, next) {
     var url = req.url.split('?')[0]
     console.log(url)
     fs.readFile(`./api${url}.json`, 'utf-8', function (err, data) {
@@ -43,6 +42,9 @@ router.get('/*', function (req, res, next) {
             })
         }
     })
-});
+}
+
+/* GET code page. */
+router.get('/*', handleRequest).post('/*', handleRequest)
 
 module.exports = router;

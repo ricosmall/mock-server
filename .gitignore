@@ -2,3 +2,5 @@ api/svn
 api/update.sh
 api/yytingadmin
 node_modules
+error
+log
